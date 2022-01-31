@@ -1,0 +1,73 @@
+@use "../util" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Playfair+Display:ital@0;1&family=Space+Grotesk:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-inter;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--clr-text-dark);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  line-height: 100%;
+}
+
+button {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#root {
+  @include flexCenter(column);
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--clr-primary);
+}
+
+// accessibility for icons
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+
+.fade-in {
+  animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

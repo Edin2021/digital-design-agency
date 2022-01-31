@@ -1,0 +1,103 @@
+// colors
+$clr-primary: #e5e5e5;
+$clr-secondary: #000000;
+$clr-accent-1: #1a1a1a;
+$clr-accent-2: #1f1f1f;
+$clr-accent-3: #ffffff;
+$clr-accent-4: #cccccc;
+$clr-accent-5: #999999;
+$clr-accent-6: #6c6c6c;
+$clr-accent-7: #3a3a3a;
+$clr-text-dark: black;
+$clr-text-light: white;
+$clr-red-light: #ff8d8d;
+$clr-red-dark: #751313;
+$clr-green-light: #57b894;
+
+// colors for themes
+:root {
+  --clr-primary: #e5e5e5;
+  --clr-secondary: #000000;
+  --clr-accent-1: #1a1a1a;
+  --clr-accent-2: #1f1f1f;
+  --clr-accent-3: #ffffff;
+  --clr-accent-4: #cccccc;
+  --clr-accent-5: #999999;
+  --clr-accent-6: #6c6c6c;
+  --clr-accent-7: #3a3a3a;
+  --clr-text-dark: black;
+  --clr-text-light: white;
+  --clr-red-light: #ff8d8d;
+  --clr-red-dark: #751313;
+  --clr-green-light: #57b894;
+
+  --heading-xlarge: 12vw;
+  --heading-large: 11vw;
+  --heading-medium: 7.5vw;
+  --heading-small: 6vw;
+
+  --text-xlarge: 3vw;
+  --text-large: 2.5vw;
+  --text-small: 1.2vw;
+  --text-normal: 1vw;
+}
+
+html.dark-theme {
+  --clr-primary: #000000;
+  --clr-secondary: #e5e5e5;
+  --clr-accent-1: #ffffff;
+  --clr-accent-3: #1a1a1a;
+  --clr-accent-2: #cccccc;
+}
+
+// fonts
+$font-inter: "Inter", sans-serif;
+$font-ivypresto: "Playfair Display", serif;
+$font-clashgrotesk: "Space Grotesk", sans-serif;
+
+// font sizes
+$heading-xlarge: 12.5rem;
+$heading-large: 11rem;
+$heading-medium-large: 8.5rem;
+$heading-medium: 7.5rem;
+$heading-medium-small: 4.5rem;
+$heading-small: 1.5rem;
+$heading-xsmall: 1.25rem;
+
+$text-xlarge: 3rem;
+$text-large: 2.5rem;
+$text-medium-large: 2rem;
+$text-medium: 1.5rem;
+$text-small: 1.2rem;
+$text-xsmall: 0.8rem;
+$text-tiny: 0.6rem;
+$text-xtiny: 0.5rem;
+$text-normal: 1rem;
+
+// other variables
+$pageWidth: clamp(270px, 90%, 1200px);
+$radius-xlarge: 2rem;
+$radius-large: 1rem;
+$radius-medium: 0.5rem;
+$radius-small: 0.25rem;
+$cubic-transition-1: cubic-bezier(0.22, 0.75, 0.24, 0.75);
+$cubic-transition-2: cubic-bezier(0.29, 0.24, 0.28, 0.81);
+
+// breakpoints (max-width)
+$bp-desktop: 1600px;
+$bp-laptop: 992px;
+$bp-tablet: 768px;
+$bp-phone: 600px;
+
+@media (max-width: $bp-laptop) {
+  :root {
+    --heading-xlarge: 13vw;
+    --heading-medium: 9.5vw;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  :root {
+    --text-xlarge: 3.5vw;
+  }
+}

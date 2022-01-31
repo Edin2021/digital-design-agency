@@ -1,0 +1,219 @@
+@use "../util" as *;
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-primary);
+  z-index: 1;
+  overflow: hidden;
+  color: var(--clr-accent-1);
+  // clip-path: ellipse(150% 100% at 50% 100%);
+  clip-path: ellipse(150% 100% at 50% 100%);
+  padding-top: 17.5vw;
+  .bubble-about {
+    display: none;
+    justify-content: center;
+    border-radius: 2em;
+    margin: 10vw auto;
+    font-size: var(--heading-medium);
+    text-transform: uppercase;
+    background-color: $clr-accent-3;
+    a {
+      color: $clr-secondary;
+      padding: 1.25em 1.75em;
+    }
+  }
+  .slider-about {
+    width: max-content;
+    margin: 10rem 0;
+    transform: translateX(-35%);
+    .row {
+      display: flex;
+      align-items: center;
+      font-size: var(--heading-medium);
+      transition: transform 2s $cubic-transition-1;
+      .text {
+        text-transform: uppercase;
+        line-height: 100%;
+        @include transition(opacity);
+      }
+      .dash-arrow {
+        display: flex;
+        width: 2.75rem;
+        height: 0.3rem;
+        background-color: var(--clr-secondary);
+        margin: 0 1rem;
+      }
+
+      &:nth-child(2) {
+        .text {
+          font-family: $font-ivypresto;
+          font-style: italic;
+        }
+      }
+    }
+  }
+  .footer-branding {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 15rem;
+    padding: 0 2rem;
+    cursor: default;
+    .row {
+      font-size: $text-large;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: -5vw;
+      .amplified-and-mark {
+        font-size: 27.5rem;
+        font-family: $font-ivypresto;
+        display: flex;
+        bottom: 0;
+        line-height: 1;
+        margin-left: -2rem;
+        margin-right: 1rem;
+      }
+      .text {
+        transform: translateY(-2rem);
+      }
+    }
+    .copyright-policies {
+      display: flex;
+      gap: 1.5rem;
+      position: absolute;
+      right: 2rem;
+      bottom: 2rem;
+      font-size: $text-xsmall;
+      font-weight: 600;
+      text-transform: capitalize;
+      opacity: 0.9;
+      a {
+        border-bottom: 1px solid var(--clr-accent-6);
+        @include transition(border);
+
+        &:hover {
+          border-bottom: 1px solid var(--clr-accent-7);
+        }
+      }
+    }
+  }
+}
+
+footer .slider-about {
+  .arrow-svg {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(-90deg);
+    margin: 0 2rem;
+    transition: transform 0.15s ease-in-out;
+    div {
+      width: 5px;
+      background-color: var(--clr-accent-1);
+      position: absolute;
+      transition: transform 0.25s ease-in-out;
+    }
+    .arrow-middle {
+      height: 100%;
+      left: 50%;
+      position: relative;
+      div {
+        height: 40%;
+        width: 3px;
+        bottom: -1px;
+        transition: all 0.025s ease-in-out;
+        transform: rotate(0);
+        left: 1px;
+      }
+    }
+  }
+  &:hover {
+    .arrow-svg {
+      transform: rotate(-135deg);
+      .arrow-middle {
+        div {
+          width: 100%;
+          left: unset;
+        }
+        .arrow-left {
+          left: -150%;
+          transform: rotate(-45deg);
+        }
+        .arrow-right {
+          right: -150%;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    .row .text {
+      opacity: 0.6;
+    }
+  }
+}
+
+@media (max-width: $bp-desktop) {
+  footer {
+    .footer-branding {
+      .row {
+        font-size: var(--text-large);
+        .amplified-and-mark {
+          font-size: 27.5vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-laptop) {
+  footer {
+    .slider-about {
+      display: none;
+    }
+    .bubble-about {
+      display: flex;
+    }
+    .footer-branding {
+      .row {
+        .amplified-and-mark {
+          font-size: 32.5vw;
+          margin-left: -1rem;
+        }
+      }
+      .copyright-policies {
+        font-size: $text-tiny;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  footer {
+    .footer-branding {
+      .row {
+        bottom: -7vw;
+        .amplified-and-mark {
+          font-size: 37.5vw;
+          margin-left: -1rem;
+          opacity: 0.15;
+          margin-left: -3rem;
+          margin-right: -3rem;
+        }
+        .text {
+          font-weight: 600;
+          font-size: $text-normal;
+        }
+      }
+      .copyright-policies {
+        font-size: $text-xtiny;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        gap: 1rem;
+      }
+    }
+  }
+}

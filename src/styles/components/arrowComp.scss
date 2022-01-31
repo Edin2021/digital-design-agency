@@ -1,0 +1,32 @@
+@use "../util" as *;
+
+.arrow-svg {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  div {
+    position: absolute;
+    background-color: var(--clr-accent-1);
+  }
+  .arrow-middle {
+    height: 100%;
+    width: 0.075em;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    div {
+      bottom: -0.045em;
+      height: 50%;
+      width: 0.075em;
+    }
+    .arrow-left {
+      left: -170%;
+      transform: rotate(-45deg);
+    }
+    .arrow-right {
+      right: -170%;
+      transform: rotate(45deg);
+    }
+  }
+}

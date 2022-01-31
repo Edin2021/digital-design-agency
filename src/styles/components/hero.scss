@@ -1,0 +1,303 @@
+@use "../util" as *;
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  @include flexCenter(column);
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 11.5rem;
+    margin-left: 48.5rem;
+    margin-right: auto;
+    .inner-text {
+      transition: transform 1s $cubic-transition-1;
+      animation: fadeInAnimation 1s;
+    }
+    .small-print-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      position: fixed;
+      top: 18rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(270px, 90%, 1200px);
+      mix-blend-mode: difference;
+      color: $clr-accent-4;
+      opacity: 0.9;
+      animation: fadeInAnimation 1s;
+    }
+    .small-print {
+      display: flex;
+      gap: 0.25rem;
+      width: 15rem;
+      font-weight: 500;
+      font-size: $text-normal;
+      line-height: 1.25;
+      span {
+        display: flex;
+        font-size: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: -0.25rem;
+      }
+    }
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $heading-xlarge;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      .inner-text {
+        font-family: $font-ivypresto;
+        font-style: italic;
+        font-weight: 500;
+        padding-bottom: 1rem;
+      }
+    }
+  }
+  .img-wrapper {
+    min-width: 15rem;
+    max-width: 15rem;
+    height: 9.5rem;
+    position: absolute;
+    @include transition(all);
+    transition-timing-function: ease-in-out;
+    animation: fadeInAnimation 1s;
+    .arrow-svg {
+      border: 2px solid transparent;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .text {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 100%;
+    position: fixed;
+    z-index: 1;
+    color: $clr-accent-3;
+    mix-blend-mode: difference;
+    cursor: default;
+  }
+  // Positioning hero text and images
+  .row {
+    &:nth-child(1) {
+      .img-wrapper {
+        transform: translateX(-25rem);
+      }
+    }
+    &:nth-child(2) {
+      .text {
+        transform: translateX(-25rem);
+      }
+      .img-wrapper {
+        transform: translateX(-3rem);
+      }
+    }
+    &:nth-child(3) {
+      .img-wrapper {
+        &:nth-child(1) {
+          transform: translateX(-31.5rem);
+        }
+        &:nth-child(3) {
+          transform: translateX(31.5rem);
+        }
+      }
+    }
+    &:nth-child(4) {
+      .text {
+        transform: translateX(-5rem);
+      }
+      .img-wrapper {
+        right: -1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-desktop) {
+  .hero {
+    h1 {
+      margin: unset;
+      gap: 12vw;
+      .small-print {
+        font-size: var(--text-normal);
+        width: 15vw;
+      }
+    }
+    .img-wrapper {
+      min-width: 15.5vw;
+      max-width: 15.5vw;
+      height: 10vw;
+    }
+    // Positioning hero text and images
+    .row {
+      font-size: var(--heading-xlarge);
+      &:nth-child(1) {
+        .img-wrapper {
+          transform: translateX(-25vw);
+        }
+      }
+      &:nth-child(2) {
+        .text {
+          transform: translateX(-25vw);
+        }
+        .img-wrapper {
+          transform: translateX(-3vw);
+        }
+      }
+      &:nth-child(3) {
+        .img-wrapper {
+          &:nth-child(1) {
+            transform: translateX(-31.5vw);
+          }
+          &:nth-child(3) {
+            transform: translateX(31.5vw);
+          }
+        }
+      }
+      &:nth-child(4) {
+        .text {
+          transform: translateX(-5vw);
+        }
+        .img-wrapper {
+          right: 1vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-laptop) {
+  .hero {
+    h1 {
+      margin-top: 10rem;
+      margin-bottom: auto;
+      margin-left: 5rem;
+      gap: 12.5vw;
+      .small-print-wrapper {
+        top: 15rem;
+      }
+      .small-print {
+        font-size: $text-xsmall;
+        width: 12rem;
+      }
+    }
+    .img-wrapper {
+      min-width: 16.5vw;
+      max-width: 16.5vw;
+      height: 10.5vw;
+    }
+    // Positioning hero text and images
+    .row {
+      &:nth-child(1) {
+        .text {
+          transform: translateX(4vw);
+        }
+      }
+      &:nth-child(2) {
+        .img-wrapper {
+          transform: translateX(1vw);
+        }
+      }
+      &:nth-child(3) {
+        .text {
+          transform: translateX(-3vw);
+        }
+        .img-wrapper {
+          &:nth-child(1) {
+            transform: translateX(-39.5vw);
+          }
+          &:nth-child(3) {
+            transform: translateX(33.5vw);
+          }
+        }
+      }
+      &:nth-child(4) {
+        .img-wrapper {
+          right: 0rem;
+          top: 67vw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .hero {
+    h1 {
+      margin-top: 10em;
+      margin-right: 1rem;
+      .small-print-wrapper {
+        top: 70vh;
+        left: 40%;
+        max-width: max-content;
+      }
+      .small-print {
+        width: 10rem;
+        font-size: $text-tiny;
+      }
+    }
+    .img-wrapper {
+      min-width: 34vw;
+      max-width: 34vw;
+      height: 21.5vw;
+    }
+    // Positioning hero text and images
+    .row {
+      &:nth-child(1) {
+        .text {
+          transform: translateX(-20vw);
+        }
+
+        .img-wrapper {
+          transform: translateX(-1rem);
+          top: 0;
+        }
+      }
+      &:nth-child(2) {
+        .img-wrapper {
+          transform: translateX(20vw);
+          top: 20vh;
+        }
+        .text {
+          transform: translateX(-35vw);
+        }
+      }
+      &:nth-child(3) {
+        .text {
+          transform: translateX(-3vw);
+        }
+        .img-wrapper {
+          &:nth-child(1) {
+            transform: translateX(-25.5vw);
+            top: 80vh;
+          }
+          &:nth-child(3) {
+            transform: unset;
+            right: 0;
+            top: 65vh;
+          }
+        }
+      }
+      &:nth-child(4) {
+        .img-wrapper {
+          right: 0rem;
+          top: 82.5vh;
+          min-width: 16.5vw;
+          max-width: 16.5vw;
+          height: 10.5vw;
+        }
+      }
+    }
+  }
+}

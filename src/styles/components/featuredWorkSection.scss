@@ -1,0 +1,39 @@
+@use "../util" as *;
+
+.featured-work-section {
+  width: 100%;
+  background-color: var(--clr-secondary);
+  z-index: 1;
+  h2 {
+    display: flex;
+    flex-direction: column;
+    width: clamp(270px, 95%, 1600px);
+    font-size: $heading-xlarge;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--clr-accent-3);
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    cursor: default;
+    span:first-of-type {
+      font-family: $font-ivypresto;
+      font-style: italic;
+    }
+  }
+}
+
+@media (max-width: $bp-desktop) {
+  .featured-work-section {
+    h2 {
+      font-size: var(--heading-xlarge);
+    }
+  }
+}
+
+@media (max-width: $bp-laptop) {
+  .featured-work-section {
+    h2 {
+      font-size: var(--heading-xlarge);
+    }
+  }
+}

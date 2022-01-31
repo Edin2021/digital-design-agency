@@ -1,0 +1,36 @@
+@use "../util" as *;
+
+.loader {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 135vh;
+  background-color: $clr-primary;
+  z-index: 100;
+  animation: hideLoader 1s forwards ease;
+  background: radial-gradient(
+    110% 50% at bottom,
+    transparent 50%,
+    $clr-accent-2 51%
+  );
+  img {
+    margin-bottom: 35vh;
+  }
+}
+
+@keyframes hideLoader {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}

@@ -1,6 +1,8 @@
 # Digital Design
 
-This is a digital agency website that is meant to display my ability to take a mockup and or design from a designer, in this case, the website design of jumor digital agency, and make it into a website.There is a slight variation comparing it to the original and that is because I didn't actually have any mockup or design file, it's strictly made based on what I could observe on their website.
+Digital Design is a heavy style and animation-sided website where critical styling and animating skills have been established. A massive contributor to where the learning accomplishments came from is that the code for styles and animations is custom written and developed.
+
+Digital design - agency is meant to display my ability to take a design, in this case, the website design of Jumor Digital Agency, and make it into a website. There is a slight variation comparing it to the original because I didn't actually have any mockup or design file, it's strictly made based on what I could observe on their website.
 
 ## [Website Link](https://digital-design.pages.dev/)
 
